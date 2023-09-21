@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <title>Exploration Space</title>
+    <link rel="icon" href="images/logo.png">
+    <style>
+        @font-face {
+            font-family: prompt;
+            src: url(fonts/Prompt-Light.ttf);
+        }
+
+        @font-face {
+            font-family: sansserifbook;
+            src: url(fonts/SansSerifBookFLF.otf);
+        }
+
+        * {
+            font-family: sansserifbook;
+            color: white;
+        }
+
+        main {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url("images/moon-surface-11088_1920.jpg");
+            height: 980px;
+            background-position: center;
+            background-size: fill;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 0px 0px 0px;
+            margin: 0px 50px;
+        }
+
+        header img {
+            margin: 0px 20px;
+        }
+
+        nav {
+            margin: 0px 0px;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 100;
+            transition: all 0.5s ease 0s;
+
+        }
+
+        li a:hover {
+            color: #af8650;
+        }
+
+        .box-1 {
+            margin: 140px 250px;
+        }
+
+        .box-1 h1 {
+            font-size: 120px;
+            font-weight: 800;
+        }
+
+        .box-1 p {
+            font-size: 16px;
+            font-weight: lighter;
+            opacity: 0.8;
+            font-family: prompt;
+            margin-top: 20px;
+        }
+
+        .box-1 button {
+            background-color: transparent;
+            border: 0.1em solid white;
+            border-radius: 50px;
+            padding: 5px;
+            width: 120px;
+            margin: 50px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease 0s;
+        }
+
+        .box-1 button a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .box-1 button i {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-left: 5px;
+        }
+
+        .box-1 button:hover {
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
+
+        .astronaut {
+            width: 550px;
+            filter: brightness(60%) grayscale(50%);
+            position: absolute;
+            top: 220px;
+            right: 15%;
+            animation-name: ease-out;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes ease-out {
+            from {
+                right: 15%;
+                top: 215px;
+            }
+
+            to {
+                right: 18%;
+                top: 230px;
+            }
+        }
+
+        .container-second-main {
+            text-align: center;
+            height: 300px;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+        }
+
+        .container-second-main a {
+            opacity: 0.7;
+            color: lightgrey;
+            font-family: prompt;
+            font-size: 16px;
+        }
+
+        .container-second-main a:hover {
+            color: lightgrey;
+            opacity: 0.5;
+        }
+
+        .container-1 {
+            height: 500px;
+            padding: 80px 0px;
+            text-align: center;
+            background-color: white;
+            background-blend-mode: multiply, luminosity;
+            background-position: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url(images/world-g449192a8a_1920.jpg);
+        }
+
+        .container-1 h3 {
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        .container-1 a {
+            opacity: 0.7;
+            color: lightgrey;
+            font-family: prompt;
+            font-size: 16px;
+        }
+
+        .container-1 a:hover {
+            color: lightgrey;
+            opacity: 0.5;
+        }
+
+        .box-age {
+            margin: 50px 0px 100px 0px;
+        }
+
+        .box-age-process {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-2 {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 90px 100px 30px 100px;
+        }
+
+        .box-2 h1 {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .box-2 p {
+            font-family: prompt;
+            font-size: 18px;
+        }
+
+        .container-2 {
+            background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url("images/astronaut-11080_1920.jpg");
+            height: 800px;
+            padding: 220px 100px;
+            display: flex;
+            justify-content: right;
+        }
+
+        .box-3 h1 {
+            font-size: 40px;
+            margin: 0px 0px 50px 0px;
+            font-family: prompt;
+            font-weight: 500;
+        }
+
+        .box-3 h6 {
+            font-size: 25px;
+            margin: 20px 0px;
+            color: #af8650;
+            font-family: sansserifbook;
+        }
+
+        .box-3 p {
+            font-size: 18px;
+            font-family: prompt;
+        }
+
+        .box-3 a {
+            opacity: 0.7;
+            color: lightgrey;
+            font-family: prompt;
+            font-size: 16px;
+        }
+
+        .box-3 a:hover {
+            color: lightgrey;
+            opacity: 0.5;
+        }
+
+        .container-3 {
+            background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), url("images/stars-2539245_1920.jpg");
+            height: 1200px;
+            display: flex;
+            justify-content: space-evenly;
+            text-align: center;
+            padding: 350px;
+        }
+
+        .card-menu {
+            padding: 30px;
+            width: 500px;
+            height: 550px;
+            margin: 0px 50px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            transition: all 0.5s ease 0s;
+        }
+
+        .card-images {
+            padding: 0px;
+        }
+
+        .container-3 img {
+            margin: 50px 0px;
+        }
+
+        .container-3 h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        .container-3 h5 {
+            font-family: prompt;
+            color: #af8650;
+            font-size: 16px;
+        }
+
+        .container-3 p {
+            font-family: prompt;
+            font-weight: 100;
+            font-size: 16px;
+            margin: 20px 0px;
+        }
+
+        .button-card {
+            position: relative;
+            top: -250px;
+            border: 1px solid white;
+            padding: 10px;
+            background-color: transparent;
+            opacity: 0;
+            border-radius: 50px;
+            width: 120px;
+            transition: all 0.5s ease 0s;
+        }
+
+        .button-card a {
+            color: #af8650;
+            text-decoration: none;
+        }
+
+        .button-card a:hover {
+            color: white;
+        }
+
+        .card-menu:hover .button-card {
+            opacity: 1;
+        }
+
+        .card-menu:hover .card-images {
+            opacity: 0.1;
+        }
+
+        .card-menu:hover .card-text {
+            opacity: 0.1;
+        }
+
+        .card-menu:hover {
+            transform: scale(1.1);
+        }
+
+        .container-4 {
+            background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url("images/moon.jpg");
+            height: 1100px;
+            margin: 0px;
+            padding: 300px;
+        }
+
+        .box-4 {
+            margin: 50px 0px 100px 0px;
+        }
+
+        .box-4 h1 {
+            font-family: prompt;
+            font-size: 45px;
+            font-weight: 700;
+        }
+
+        .box-4 h6 {
+            color: #af8650;
+            font-family: prompt;
+            font-size: 18px;
+        }
+
+        .box-4 p {
+            font-family: prompt;
+            font-size: 18px;
+            font-weight: 100;
+            margin: 80px 0px;
+        }
+
+        .container-4 a {
+            opacity: 0.7;
+            color: lightgrey;
+            font-family: prompt;
+            font-size: 16px;
+        }
+
+        .container-4 a:hover {
+            color: lightgrey;
+            opacity: 0.5;
+        }
+
+        .ref {
+            margin-top: 0px;
+            padding: 100px;
+        }
+
+        .ref span {
+            display: flex;
+        }
+
+        .ref h1 {
+            font-family: prompt;
+            font-weight: bold;
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .ref p {
+            font-family: prompt;
+            font-size: 16px;
+        }
+
+        .ref a {
+            margin-left: 10px;
+            color: #af8650;
+            font-size: 20px;
+        }
+
+        footer {
+            background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("images/earth-1365995_1920.jpg");
+            height: 350px;
+            margin: 0px;
+            background-position: center;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        footer p {
+            font-family: prompt;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <main>
+        <header>
+            <a href="index.html"><img src="images/Saturn-Transparent-Images.png" width="100px" title="Image by pngarts"></a>
+            <nav>
+              <ul>
+                <li style="background-color: #af8650; border-radius:
+                            50px"><a href="index.html" style="color: black;">Home</a></li>
+                <li><a href="solar.html">Solar System</a></li>
+                <li><a href="exploration.html">Exploration</a></li>
+              </ul>
+            </nav>
+          </header>
+        <div class="box-1">
+            <h1>Space</h1>
+            <h1 style="color: transparent;
+                    -webkit-text-stroke-color: white;
+                    -webkit-text-stroke-width: 1px;
+                    font-weight: 500;">Exploration.</h1>
+            <p>สำรวจจักรวาลและท่องอวกาศไปด้วยกัน<br>
+                เรียนรู้ทั้งระบบสุริยะ กลุ่มดาว และวิวัฒนาการ<br>
+                พร้อมทั้งความรู้รอบตัวเกี่ยวกับดาวที่เราอาศัยอยู่</p>
+            <button><a href="solar.html">Expore</a><i class="bi
+                        bi-arrow-right-short"></i></button>
+        </div>
+        <img class="astronaut" src="images/as2.png" title="astronaut by
+                pngwing">
+    </main>
+
+    <section class="container-second-main">
+        <div class="box-age">
+            <h3>Age of the Earth</h3>
+            <div class="box-age-process">
+                <div style="text-align: right;">
+                    <p style="color: #af8650; font-family: prompt;">อายุโลก</p>
+                    <p style="color: #af8650; font-family: prompt;">โลกจะอยู่อีก</p>
+                </div>
+                <div style="text-align: left; margin-left: 20px; margin-right: 50px;">
+                    <p style="font-family: prompt;">4.5 พันล้านปี</p>
+                    <p style="font-family: prompt;">ประมาณ 5 พันล้านปี</p>
+                </div>
+                <div class="progress" style="height: 5px; width: 70%">
+                    <div class="progress-bar" role="progressbar" aria-label="Segment one" style="width: 47.3%;
+                        background-color: #af8650;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <a
+                href="https://www.meteorologiaenred.com/th/%E0%B8%AD%E0%B8%B2%E0%B8%A2%E0%B8%B8%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%82%E0%B8%A5%E0%B8%81.html">แหล่งที่มา</a>
+        </div>
+    </section>
+
+    <section class="container-1" title="Image by WikiImages - Pixabay">
+        <h3>Earth Overshoot Day By the Numbers</h3>
+        <div class="box-2">
+            <div>
+                <h1>3,800</h1>
+                <p>ล้านปีก่อน สิ่งมีชีวิตปรากฎครั้งแรกบนโลก</p>
+            </div>
+            <div>
+                <h1>121%</h1>
+                <p>จำนวนประชากรเพิ่มขึ้น ตั้งแต่ปี 1970</p>
+            </div>
+            <div>
+                <h1>-68%</h1>
+                <p>จำนวนสัตว์มีกระดูกสัตว์หลังลดลง ตั้งแค่ปี 2513</p>
+            </div>
+            <div>
+                <h1>60%</h1>
+                <p>รอยเท้านิเวศของมนุษย์ คือ คาร์บอน</p>
+            </div>
+        </div>
+        <a href="https://www.overshootday.org/">แหล่งที่มา</a>
+    </section>
+
+    <section class="container-2" title="image by WikiImages on Pixabay ">
+        <div class="box-3">
+            <h6>Why we have to explore the space</h6>
+            <h1>ทำไมเราต้องสำรวจอวกาศ?</h1>
+            <p>☆
+                หาโอกาสและความเป็นไปได้ที่จะอพยพมนุษย์ไปตั้งถิ่นฐานบนดาวเคราะห์ดวงอื่น</p>
+            <p>☆ หาองค์ความรู้ทางดาราศาสตร์ วิทยาศาสตร์ การกำเนิดเอกภพ</p>
+            <p>☆ ใช้องค์ความรู้เทคโนโลยีอวกาศมาพัฒนาใช้ในชีวิตประจำวัน</p>
+            <p style="margin-bottom: 50px;">☆ เพื่อทำนายและสังเกตปรากฏการณ์ในอนาคต</p>
+            <a href="https://www.sanook.com/campus/1403748/">แหล่งที่มา</a>
+        </div>
+    </section>
+
+    <section class="container-3" title="image by Gerd Altmann on Pixabay ">
+        <div class="card-menu">
+            <img class="card-images" src="images/saturn.png" title="image by
+                    pngwing" width="300px" style="margin:70px 0px">
+            <div class="card-text">
+                <h1>Solar System</h1>
+                <h5>ระบบสุริยะ</h5>
+                <p>ระบบดาวที่โลกเราเป็นส่วนหนึ่ง<br>อยู่ในกาแล็กซีทางช้างเผือก<br>มีดาวเคราะห์และดาวบริวารโคจรโดยรอบ</p>
+            </div>
+            <button class="button-card"><a href="solar.html">See more</a></button>
+        </div>
+        <div class="card-menu">
+            <img class="card-images" src="images/starg.png" title="image by
+                    pngitem" width="300px" height="180px" style="margin:50px 0px">
+            <div class="card-text">
+                <h1>Constellations</h1>
+                <h5>กลุ่มดาว</h5>
+                <p>กลุ่มดาวและจักรราศี<br>กลุ่มดาวฤกษ์จำนวน 12 กลุ่ม</p>
+            </div>
+            <button class="button-card"><a href="constellation.html">See more</a></button>
+        </div>
+        <div class="card-menu">
+            <img class="card-images" src="images/pic.png" title="image by
+                    kindpng" width="300px" height="180px" style="filter: brightness(80%) grayscale(50%);
+                    margin:50px 0px">
+            <div class="card-text">
+                <h1>Space Exploration Timeline</h1>
+                <h5>วิวัฒนาการอุตสาหกรรมอวกาศ</h5>
+                <p>การเจริญเติบโตของอุตสาหกรรมอวกาศ<br>และความก้าวหน้าของการสำรวจจักรวาล</p>
+            </div>
+            <button class="button-card"><a href="exploration.html">See more</a></button>
+        </div>
+    </section>
+
+    <section class="container-4" title="image by Tumisu on Pixabay ">
+        <div class="box-4">
+            <h6>โครงการอวกาศในปัจจุบัน</h6>
+            <h1>ภารกิจ Artemis 1</h1>
+            <p>ดวงจันทร์หนึ่งในเป้าหมายการสำรวจอวกาศของมนุษย์ในตลอดช่วงเวลาหลายสิบปีที่ผ่านมา<br>
+                ล่าสุดนาซาเตรียมทำภารกิจ Artemis 1 การส่งยานอวกาศ Orion<br>
+                แบบไร้มนุษย์อวกาศภายในยานออกเดินทางไปโคจรรอบดวงจันทร์ในช่วงปี
+                2022 นี้<br>และเดินทางกลับโลกเพื่อทำการทดสอบและเก็บข้อมูลด้านต่าง
+                ๆ<br>
+                ก่อนทำภารกิจพร้อมนักบินอวกาศในอนาคต</p>
+        </div>
+        <a href="https://www.tnnthailand.com/news/tech/106979/">แหล่งที่มา</a>
+        <br>
+    </section>
+
+    <section class="ref">
+        <h1>แหล่งที่มา</h1>
+        <span>
+            <p>รูปภาพประกอบบางส่วน :</p>
+            <a href="https://www.pngitem.com/">pngitem.com</a>
+        </span>
+        <span>
+            <p>รูปภาพประกอบบางส่วน :</p>
+            <a href="https://www.pngwing.com/">pngwing.com</a>
+        </span>
+        <span>
+            <p>รูปภาพประกอบบางส่วน :</p>
+            <a href="https://www.pngegg.com/th">pngegg.com</a>
+        </span>
+        <span>
+            <p>ภาพพื้นหลังบางส่วน :</p>
+            <a href="https://pixabay.com/th/">pixabay.com</a>
+        </span>
+    </section>
+
+    <footer>
+        <p style="color: grey;">Designed & Built by Pannisa Samerjai</p>
+    </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <title>Solar System</title>
+    <link rel="icon" href="images/logo.png">
+
+    <style>
+        @font-face {
+            font-family: prompt;
+            src: url(fonts/Prompt-Light.ttf);
+        }
+
+        @font-face {
+            font-family: sansserifbook;
+            src: url(fonts/SansSerifBookFLF.otf);
+        }
+
+        * {
+            font-family: sansserifbook;
+            color: white;
+        }
+
+        main {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.95)), url("images/2k_stars_milky_way.jpg");
+            height: 1200px;
+            background-size: cover;
+        }
+
+        main h1 {
+            font-size: 100px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        main h3 {
+            color: #af8650;
+            text-align: center;
+            animation: shakeIt 2s ease-in infinite;
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+
+        @keyframes shakeIt {
+            0% {
+                animation-timing-function: ease-out;
+                transform: scale(1);
+                transform-origin: center center;
+            }
+
+            10% {
+                animation-timing-function: ease-in;
+                transform: scale(0.91);
+            }
+
+            17% {
+                animation-timing-function: ease-out;
+                transform: scale(0.98);
+            }
+
+            33% {
+                animation-timing-function: ease-in;
+                transform: scale(0.87);
+            }
+
+            45% {
+                animation-timing-function: ease-out;
+                transform: scale(1);
+            }
+        }
+
+        main p {
+            font-size: 16px;
+            font-weight: lighter;
+            opacity: 0.6;
+            font-family: prompt;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 0px 0px 0px;
+            margin: 0px 50px;
+        }
+
+        header img {
+            margin: 0px 20px;
+        }
+
+        nav {
+            margin: 0px 0px;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 100;
+            transition: all 0.5s ease 0s;
+        }
+
+        li a:hover {
+            color: #af8650;
+        }
+
+        .container-solarsystem {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+        }
+
+        .container-solarsystem model-viewer {
+            filter: saturate(120%);
+            margin: 0px 10px;
+            transition: all 0.5s ease 0s;
+        }
+
+        .container-solarsystem model-viewer:hover {
+            transform: scale(1.2);
+        }
+
+        .sun model-viewer:hover {
+            transform: scale(1.1);
+        }
+
+        .earth model-viewer:hover {
+            transform: scale(1.2), rotate(-40deg);
+        }
+
+        .sun model-viewer {
+            height: 450px;
+            width: 450px;
+        }
+
+        .mercury model-viewer {
+            height: 50px;
+            width: 50px;
+        }
+
+        .venus model-viewer {
+            height: 80px;
+            width: 80px;
+        }
+
+        .earth model-viewer {
+            height: 80px;
+            width: 80px;
+        }
+
+        .mars model-viewer {
+            height: 40px;
+            width: 40px;
+        }
+
+        .jupiter model-viewer {
+            filter: saturate(200%);
+            height: 250px;
+            width: 250px;
+        }
+
+        .saturn model-viewer {
+            filter: saturate(200%);
+            transform: rotate(-40deg);
+            height: 300px;
+            width: 300px;
+        }
+
+        .uranus model-viewer {
+            filter: saturate(200%);
+            height: 110px;
+            width: 110px;
+        }
+
+        .neptune model-viewer {
+            filter: saturate(200%);
+            height: 110px;
+            width: 110px;
+        }
+
+        .container-solar {
+            height: 800px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.95)), url(images/2k_stars.jpg);
+            padding: 20px 0px;
+            display: flex;
+            justify-content: center;
+            margin-top: 150px;
+        }
+
+        .container-solar h1 {
+            font-size: 100px;
+            font-weight: bold;
+        }
+
+        .container-solar p {
+            font-family: prompt;
+            width: 500px;
+            margin: 20px 0px;
+        }
+
+        .container-solar h3 {
+            font-family: prompt;
+            padding-top: 50px;
+            font-size: 25px;
+            color: #af8650;
+        }
+
+        .card-solar {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .content-sun {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_sun.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-mercury {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_mercury.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-venus {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_venus_surface.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-earth {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_earth.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-mars {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_mars.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-jupiter {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_jupiter.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-saturn {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_saturn.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-uranus {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_uranus.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .content-neptune {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-image: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 1)), url(images/2k_neptune.jpg);
+            height: 800px;
+            width: 500px;
+            background-size: cover;
+            margin-right: 50px;
+        }
+
+        .text-solar {
+            margin: 0px 20px;
+        }
+
+        .text-solar p {
+            font-size: 16px;
+        }
+
+        .info-solar {
+            display: flex;
+            justify-content: left;
+            margin: 50px 0px;
+        }
+
+        .info-solar div {
+            border: 0.1em solid white;
+            width: 220px;
+            padding: 10px;
+        }
+
+        .info-solar h6 {
+            font-family: prompt;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .info-solar p {
+            font-family: prompt;
+            font-size: 16px;
+        }
+
+        .img-solar {
+            border: 1px solid red;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .ref {
+            margin-top: 100px;
+            padding: 100px;
+        }
+
+        .ref span {
+            display: flex;
+        }
+
+        .ref h1 {
+            font-family: prompt;
+            font-weight: bold;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .ref p {
+            font-family: prompt;
+            font-size: 18px;
+        }
+
+        .ref a {
+            margin-left: 10px;
+            color: #af8650;
+            font-size: 16px;
+        }
+
+        footer {
+            background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("images/earth-1365995_1920.jpg");
+            height: 350px;
+            margin: 0px;
+            background-position: center;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        footer p {
+            font-family: prompt;
+        }
+
+        footer a {
+            opacity: 0.7;
+            color: #af8650;
+            font-family: prompt;
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+
+        footer a:hover {
+            color: lightgrey;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <main>
+        <header>
+            <a href="index.html"><img src="images/Saturn-Transparent-Images.png" width="100px"
+                    title="Image by pngarts"></a>
+            <nav>
+                <ul>
+                    <li style="background-color: lightgrey; border-radius:
+                            50px"><a href="index.html" style="color: black;">Home</a></li>
+                    <li><a href="solar.html">Solar System</a></li>
+                    <li><a href="exploration.html">Exploration</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1>Solar System</h1>
+        <p>ระบบดาวที่โลกเราเป็นส่วนหนึ่ง
+            อยู่ในกาแล็กซีทางช้างเผือก
+            มีดาวเคราะห์และดาวบริวารโคจรโดยรอบ</p>
+        <h3>Pick the one you want !</h3>
+        <div class="container-solarsystem">
+            <a href="#sun" class="sun">
+                <model-viewer src="assets/Sun.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/sun.glb"></model-viewer>
+            </a>
+            <a href="#mercury" class="mercury">
+                <model-viewer src="assets/Mercury.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Mercury.glb"></model-viewer>
+            </a>
+            <a href="#venus" class="venus">
+                <model-viewer src="assets/Venus(surface).glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Venus(surface).glb"></model-viewer>
+            </a>
+            <a href="#earth" class="earth">
+                <model-viewer src="assets/Earth.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Earth.glb"></model-viewer>
+            </a>
+            <a href="#mars" class="mars">
+                <model-viewer src="assets/Mars.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Mars.glb"></model-viewer>
+            </a>
+            <a href="#jupiter" class="jupiter">
+                <model-viewer src="assets/Jupiter.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Jupiter.glb"></model-viewer>
+                <a href="#saturn" class="saturn">
+                    <model-viewer src="assets/Saturn.glb" alt="VR Headset" auto-rotate camera-controls ar
+                        ios-src="assets/Saturn.glb"></model-viewer>
+                </a>
+                <a href="#uranus" class="uranus">
+                    <model-viewer src="assets/Uranus.glb" alt="VR Headset" auto-rotate camera-controls ar
+                        ios-src="assets/Uranus.glb"></model-viewer>
+                </a>
+                <a href="#neptune" class="neptune">
+                    <model-viewer src="assets/Neptune.glb" alt="VR Headset" auto-rotate camera-controls ar
+                        ios-src="assets/Neptune.glb"></model-viewer>
+                </a>
+        </div>
+    </main>
+
+    <section class="container-solar" id="sun">
+        <div class="content-sun">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>ดวงอาทิตย์</h3>
+                    <h1>Sun</h1>
+                    <p>ดาวฤกษ์ที่อยู่ตรงศูนย์กลางของระบบสุริยะ
+                        มีขนาดเส้นผ่านศูนย์กลาง 1.4
+                        ล้านกิโลเมตร หรือ 109 เท่าของเส้นผ่านศูนย์กลางโลก
+                        ดวงอาทิตย์มีมวลมากกว่าโลก 333,000 เท่า
+                        แต่มีความหนาแน่นเพียง
+                        0.25 เท่าของโลก
+                        เนื่องจากมีองค์ประกอบเป็นไฮโดรเจน 74% ฮีเลียม 25%
+                        และธาตุชนิดอื่น 1% </p>
+                </div>
+                <model-viewer src="assets/Sun.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/sun.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>เส้นผ่านศูนย์กลาง (Diameter)</h6>
+                    <p>1.4 ล้านกิโลเมตร</p>
+                </div>
+                <div>
+                    <h6>มวล<br>(Mass)</h6>
+                    <p>1.9 ล้านกิโลกรัม</p>
+                </div>
+                <div>
+                    <h6>จำนวนดวงจันทร์บริวาณ (Satellite)</h6>
+                    <p>0 ดวง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="mercury">
+        <div class="content-mercury">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>ดาวพุธ</h3>
+                    <h1>Mercury</h1>
+                    <p>ดาวเคราะห์ซึ่งอยู่ใกล้กับดวงอาทิตย์มากที่สุด เป็นดาวเคราะห์ขนาดเล็ก และไม่มีดวงจันทร์เป็นบริวาร
+                        โครงสร้างภายในของดาวพุธประกอบไปด้วยแกนเหล็กขนาดใหญ่มีรัศมีประมาณ 1,800 ถึง 1,900 กิโลเมตร
+                        ล้อมรอบด้วยชั้นที่เป็นซิลิเกต (ในทำนองเดียวกับที่แกนของโลกถูกห่อหุ้มด้วยแมนเทิลและเปลือก)
+                        ซึ่งหนาเพียง 500 ถึง 600 กิโลเมตร บางส่วนของแกนอาจจะยังหลอมละลายอยู่</p>
+                    <p>ดาวพุธไม่มีชั้นบรรยากาศห่อหุ้ม ดาวพุธอยู่ใกล้ดวงอาทิตย์มาก กลางวันจึงมีอุณหภูมิสูงถึง 430 °C
+                        แต่กลางคืนอุณหภูมิลดเหลือเพียง -180°C อุณหภูมิกลางวันกลางคืนแตกต่างกันถึง 610°C</p>
+                </div>
+                <model-viewer src="assets/Mercury.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Mercury.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>เส้นผ่านศูนย์กลาง (Diameter)</h6>
+                    <p>4,880 กิโลเมตร</p>
+                </div>
+                <div>
+                    <h6>มวล<br>(Mass)</h6>
+                    <p>3.30E23 ล้านกิโลกรัม</p>
+                </div>
+                <div>
+                    <h6>จำนวนดวงจันทร์บริวาณ (Satellite)</h6>
+                    <p>0 ดวง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="venus">
+        <div class="content-venus">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>ดาวศุกร์</h3>
+                    <h1>Venus</h1>
+                    <p>ดาวเคราะห์ที่มีขนาดใหญ่เป็นอันดับที่ 6 ไม่มีดวงจันทร์บริวาร<br>ดาวศุกร์มีลักษณะที่คล้ายคลึงกับโลก
+                        จนได้ชื่อว่าเป็นดาวเคราะห์ฝาแฝดกับโลกของเรา โครงสร้างภายในของดาวศุกร์ ประกอบด้วย
+                        แกนกลางที่เป็นเหล็กมีรัศมีประมาณ 3,000 กิโลเมตร ห่อหุ้มด้วยชั้นแมนเทิลที่มีความหนาประมาณ 3,000
+                        กิโลเมตร และเปลือกแข็งที่ประกอบด้วยหินซิลิเกต</p>
+                </div>
+                <model-viewer src="assets/Venus(surface).glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Venus(surface).glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>เส้นผ่านศูนย์กลาง (Diameter)</h6>
+                    <p>12,104 กิโลเมตร</p>
+                </div>
+                <div>
+                    <h6>มวล<br>(Mass)</h6>
+                    <p>4.87E24 ล้านกิโลกรัม</p>
+                </div>
+                <div>
+                    <h6>จำนวนดวงจันทร์บริวาณ (Satellite)</h6>
+                    <p>0 ดวง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="earth">
+        <div class="content-earth">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>ดาวโลก</h3>
+                    <h1>Earth</h1>
+                    <p>ดาวเคราะห์ดวงเดียวในระบบสุริยะที่มีสภาวะแวดล้อมเอื้ออำนวยต่อการดำรงชีวิตของสิ่งมีชีวิต
+                        โลกอยู่ห่างจากดวงอาทิตย์เป็นลำดับที่ 3 และมีขนาดใหญ่เป็นอันดับที่ 5
+                        โลกมีสัณฐานเป็นทรงกลมแป้นมีรัศมีเฉลี่ย 6,371 กิโลเมตร</p>
+                    <p>โครงสร้างภายในของโลกประกอบไปด้วยแก่นชั้นในที่เป็นเหล็ก มีรัศมีประมาณ 1,200 กิโลเมตร
+                        ห่อหุ้มด้วยแก่นชั้นนอกที่เป็นของเหลว (Liquid) ประกอบด้วยเหล็กและนิเกิล มีความหนาประมาณ 2,200
+                        กิโลเมตร ถัดขึ้นมาเป็นชั้นแมนเทิลซึ่งเป็นของแข็งเนื้ออ่อนที่ยืดหยุ่นได้ (Plastic) ประกอบไปด้วย
+                        เหล็ก แมกนีเซียม ซิลิกอน และธาตุอื่นๆ มีความหนาประมาณ 3,000 กิโลเมตร เปลือกโลกเป็นของแข็ง
+                        (Solid) มีองค์ประกอบส่วนใหญ่เป็นเฟลด์สปาร์ และควอตช์ (ซิลิกอนไดออกไซด์)</p>
+                </div>
+                <model-viewer src="assets/Earth.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Earth.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>เส้นผ่านศูนย์กลาง (Diameter)</h6>
+                    <p>12,756 กิโลเมตร</p>
+                </div>
+                <div>
+                    <h6>มวล<br>(Mass)</h6>
+                    <p>5.97E24 ล้านกิโลกรัม</p>
+                </div>
+                <div>
+                    <h6>จำนวนดวงจันทร์บริวาณ (Satellite)</h6>
+                    <p>1 ดวง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="mars">
+        <div class="content-mars">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>ดาวอังคาร</h3>
+                    <h1>Mars</h1>
+                    <p>ดาวเคราะห์ที่อยู่ห่างจากดวงอาทิตย์เป็นอันดับที่ 4 ในบรรดาดาวเคราะห์ทั้งหมด
+                        ดาวอังคารมีขนาดเส้นผ่านศูนย์กลางประมาณ 0.5 เท่าของโลก
+                        ดาวอังคารมีโครงสร้างภายในประกอบด้วยแก่นของแข็งมีรัศมีประมาณ 1,700 กิโลเมตร
+                        ห่อหุ้มด้วยชั้นแมนเทิลที่เป็นหินหนืดหนาประมาณ 1,600 กิโลเมตร และมีเปลือกแข็งเช่นเดียวกับโลก</p>
+                    <p>ดาวอังคารมีสีแดงเนื่องจากพื้นผิวประกอบด้วยออกไซด์ของเหล็ก (สนิมเหล็ก)
+                        พื้นผิวของดาวอังคารเต็มไปด้วยหุบเหวต่างๆ มากมาย หุบเหวขนาดใหญ่ชื่อ หุบเหวมาริเนอริส (Valles
+                        Marineris) มีความยาว 4,000 กิโลเมตร กว้าง 600 กิโลเมตร ลึก 8 กิโลเมตร
+                        นอกจากนี้ดาวอังคารยังมีภูเขาไฟที่สูงที่สุดในระบบสุริยะชื่อ ภูเขาไฟโอลิมปัส (Mount Olympus) สูง
+                        25 กิโลเมตร ฐานที่แผ่ออกไปมีรัศมี 300 กิโลเมตร</p>
+                </div>
+                <model-viewer src="assets/Mars.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Mars.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>เส้นผ่านศูนย์กลาง (Diameter)</h6>
+                    <p>6,794 กิโลเมตร</p>
+                </div>
+                <div>
+                    <h6>มวล<br>(Mass)</h6>
+                    <p>6.42E23 ล้านกิโลกรัม</p>
+                </div>
+                <div>
+                    <h6>จำนวนดวงจันทร์บริวาณ (Satellite)</h6>
+                    <p>2 ดวง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="jupiter">
+        <div class="content-jupiter">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>ดาวพฤหัส</h3>
+                    <h1>Jupiter</h1>
+                    <p>วัตถุท้องฟ้าที่มีความสว่างมากเป็นอันดับที่ 4 รองจากดวงอาทิตย์ ดวงจันทร์ และดาวศุกร์
+                        และเป็นที่รู้จักกันมาตั้งแต่ยุคก่อนประวัติศาสตร์ ดาวพฤหัสบดีถูกสำรวจเป็นครั้งแรกโดยยานไพโอเนียร์
+                        10 ในปี พ.ศ.2516 ติดตามด้วย ไพโอเนียร์ 11, วอยเอเจอร์ 1, วอยเอเจอร์ 2, ยูลิซิส และกาลิเลโอ</p>
+                    <p>ดาวพฤหัสบดีเป็นดาวเคราะห์แก๊สซึ่งบรรยากาศหนาแน่น มีองค์ประกอบหลักเป็นไฮโดรเจน 90% และฮีเลียม 10%
+                        ปะปนด้วยมีเทน น้ำ และแอมโมเนียจำนวนเล็กน้อย
+                        ลึกลงไปด้านล่างเป็นแมนเทิลชั้นนอกซึ่งประกอบไปด้วยไฮโดรเจนและฮีเลียมเหลว
+                        และแมนเทิลชั้นในที่ประกอบไปด้วยไฮโดรเจนซึ่งมีสมบัติเป็นโลหะ และแก่นกลางที่เป็นหินแข็งมีขนาดเป็น
+                        2 เท่าของโลก</p>
+                </div>
+                <model-viewer src="assets/Jupiter.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Jupiter.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>เส้นผ่านศูนย์กลาง (Diameter)</h6>
+                    <p>142,984 กิโลเมตร</p>
+                </div>
+                <div>
+                    <h6>มวล<br>(Mass)</h6>
+                    <p>1.90E27 ล้านกิโลกรัม</p>
+                </div>
+                <div>
+                    <h6>จำนวนดวงจันทร์บริวาณ (Satellite)</h6>
+                    <p>39 ดวง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="saturn">
+        <div class="content-saturn">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>ดาวเสาร์</h3>
+                    <h1>Saturn</h1>
+                    <p>ดาวเคราะห์ที่รู้จักกันมาตั้งแต่ก่อนยุคประวัติศาสตร์
+                        กาลิเลโอสังเกตดาวเสาร์ด้วยกล้องโทรทรรศน์เป็นครั้งแรกเมื่อปี พ.ศ. 2153</p>
+                    <p>ดาวเสาร์ถูกสำรวจโดยยานไพโอเนียร์ 11 ในปี พ.ศ.2522 ตามด้วยยานวอยเอเจอร์ 1 ยานวอยเอเจอร์ 2
+                        และยานแคสสินีในปี พ.ศ.2547 บรรยากาศของดาวเสาร์เป็น ไฮโดรเจน 75% ฮีเลียม 25% ปะปนไปด้วยน้ำ มีเทน
+                        แอมโมเนีย จำนวนเล็กน้อย แถบสีบนดาวเสาร์เกิดขึ้นจากการหมุนรอบตัวเองเร็วมาก
+                        จนทำให้เกิดการหมุนวนของชั้นบรรยากาศที่มีอุณหภูมิแตกต่างกัน จึงปรากฏเป็นแถบเข้มและจางสลับกันไป
+                        โครงสร้างภายในของดาวเสาร์มีลักษณะคล้ายคลึงกับของดาวพฤหัสบดี มีแกนกลางที่เป็นหินแข็ง
+                        ห่อหุ้มด้วยแมนเทิลชั้นในที่เป็นโลหะไฮโดรเจน และแมนเทิลชั้นนอกที่เป็นไฮโดรเจนและฮีเลียมเหลว</p>
+                </div>
+                <model-viewer src="assets/Saturn.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Saturn.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%); transform: rotate(-20deg);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>เส้นผ่านศูนย์กลาง (Diameter)</h6>
+                    <p>120,536 กิโลเมตร</p>
+                </div>
+                <div>
+                    <h6>มวล<br>(Mass)</h6>
+                    <p>5.69E25ล้านกิโลกรัม</p>
+                </div>
+                <div>
+                    <h6>จำนวนดวงจันทร์บริวาณ (Satellite)</h6>
+                    <p>30 ดวง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="uranus">
+        <div class="content-uranus">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>ดาวยูเรนัส</h3>
+                    <h1>Uranus</h1>
+                    <p> ถูกค้นพบครั้งแรกโดย วิลเลี่ยม เฮอส์เชล ในปี พ.ศ.2534 สองร้อยปีต่อมา ยานวอยเอเจอร์ 2
+                        ทำการสำรวจดาวยูเรนัสในปี พ.ศ. 2529 พบว่า บรรยากาศของดาวยูเรนัสประกอบด้วยไฮโดรเจน 83%, ฮีเลียม
+                        15% และมีเทน 2% ดาวยูเรนัสมีสีฟ้าเนื่องจากแก๊สมีเทนดูดกลืนสีแดงและสะท้อนสีน้ำเงิน
+                        บรรยากาศมีลมพัดแรงมาก ลึกลงไปที่แก่นของดาวห่อหุ้มด้วยโลหะไฮโดรเจนเหลว</p>
+                    <p>ขณะที่ดาวเคราะห์ส่วนใหญ่มีแกนหมุนรอบตัวเองเกือบตั้งฉากกับระนาบสุริยวิถี
+                        แต่แกนของดาวยูเรนัสวางตัวเกือบขนานกับสุริยวิถี
+                        ดังนั้นอุณหภูมิบริเวณขั้วดาวจึงสูงกว่าบริเวณเส้นศูนย์สูตร
+                        ดาวยูเรนัสมีวงแหวนเช่นเดียวกับดาวเคราะห์ชั้นนอกดวงอื่นๆ วงแหวนของดาวยูเรนัสมีความสว่างไม่มาก
+                        เนื่องจากประกอบด้วยอนุภาคขนาดเล็ก มีขนาดตั้งแต่ฝุ่นผงจนถึง 10 เมตร
+                        ดาวยูเรนัสมีดวงจันทร์บริวารอย่างน้อย 27 ดวง ดวงจันทร์ขนาดใหญ่ที่มีรูปร่างเป็นทรงกลม ได้แก่
+                        มิรันดา แอเรียล อัมเบรียล ไททาเนีย และ โอเบรอน</p>
+                </div>
+                <model-viewer src="assets/Uranus.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Uranus.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%); transform: rotate(-20deg);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>เส้นผ่านศูนย์กลาง (Diameter)</h6>
+                    <p>51,118 กิโลเมตร</p>
+                </div>
+                <div>
+                    <h6>มวล<br>(Mass)</h6>
+                    <p>8.86E25ล้านกิโลกรัม</p>
+                </div>
+                <div>
+                    <h6>จำนวนดวงจันทร์บริวาณ (Satellite)</h6>
+                    <p>21 ดวง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-solar" id="neptune">
+        <div class="content-neptune">
+            <p></p>
+        </div>
+        <div>
+            <div class="card-solar">
+                <div class="text-solar">
+                    <h3>ดาวเนปจูน</h3>
+                    <h1>Neptune</h1>
+                    <p> ถูกค้นพบเนื่องจากนักดาราศาสตร์พบว่า
+                        ตำแหน่งของดาวยูเรนัสในวงโคจรรอบดวงอาทิตย์ไม่ได้เป็นไปตามกฏของนิวตันจึงตั้งสมมติฐานว่า
+                        จะต้องมีดาวเคราะห์อีกดวงหนึ่งที่อยู่ไกลถัดออกไปมารบกวนวงโคจรของดาวยูเรนัส
+                        ในที่สุดดาวเนปจูนก็ถูกค้นพบโดย โจฮานน์ กัลเล ในปี พ.ศ.2389</p>
+                    <p>ดาวเนปจูนมีองค์ประกอบคล้ายคลึงกับดาวยูเรนัส คือ มีบรรยากาศเป็นไฮโดรเจนและฮีเลียม
+                        และมีมีเทนเจือปนอยู่จึงมีสีน้ำเงิน ดาวเนปจูนมีขนาดเล็กกว่าดาวยูเรนัสเล็กน้อย
+                        แต่มีความหนาแน่นมากกว่า โดยที่แก่นของดาวเนปจูนเป็นของแข็งมีขนาดใกล้เคียงกับโลกของเรา
+                        ในช่วงเวลาที่ยานวอยเอเจอร์ 2 เข้าใกล้ดาวเนปจูนได้ถ่ายภาพ จุดมืดใหญ่ (Great dark spot)
+                        ทางซีกใต้ของดาวมีขนาดใหญ่เกือบครึ่งหนึ่งของจุดแดงใหญ่บนดาวพฤหัสบดี
+                        (ประมาณเท่ากับเส้นผ่านศูนย์กลางของโลก)
+                        จุดมืดใหญ่นี้เป็นพายุหมุนเช่นเดียวกับจุดแดงใหญ่บนดาวพฤหัสบดี มีกระแสลมพัดแรงที่สุดในระบบสุริยะ
+                        ความเร็วลม 300 เมตร/วินาที หรือ 1,080 กิโลเมตรต่อชั่วโมง </p>
+                </div>
+                <model-viewer src="assets/Neptune.glb" alt="VR Headset" auto-rotate camera-controls ar
+                    ios-src="assets/Neptune.glb"
+                    style="width: 600px; height: 600px; filter: saturate(150%); transform: rotate(-20deg);"></model-viewer>
+            </div>
+            <div class="info-solar">
+                <div>
+                    <h6>เส้นผ่านศูนย์กลาง (Diameter)</h6>
+                    <p>49,528 กิโลเมตร</p>
+                </div>
+                <div>
+                    <h6>มวล<br>(Mass)</h6>
+                    <p>1.02E25ล้านกิโลกรัม</p>
+                </div>
+                <div>
+                    <h6>จำนวนดวงจันทร์บริวาณ (Satellite)</h6>
+                    <p>8 ดวง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ref">
+        <h1>แหล่งที่มา</h1>
+        <span>
+            <p>3D Model ทั้งหมด :</p>
+            <a
+                href="https://solarsystem.nasa.gov/resources/all/?order=pub_date+desc&per_page=50&page=0&search=&condition_1=1%3Ais_in_resource_list&fs=&fc=&ft=&dp=&category=">solarsystem.nasa.gov</a>
+        </span>
+        <span>
+            <p>ภาพพื้นหลังบางส่วน :</p>
+            <a href="https://pixabay.com/th/">pixabay.com</a>
+        </span>
+        <span>
+            <p>รูปภาพพื้นผิวของดาวและภาพพื้นหลัง :</p>
+            <a href="https://www.solarsystemscope.com/textures/">solarsystemscope.com</a>
+        </span>
+        <span>
+            <p>ข้อมูลทั้งหมด :</p>
+            <a href="http://www.lesa.biz/astronomy/solar-system">lesa.biz</a>
+        </span>
+    </section>
+
+    <footer>
+        <p style="color: grey;">Designed & Built by Pannisa Samerjai</p>
+    </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+</body>
+
+</html>

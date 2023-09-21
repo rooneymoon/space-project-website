@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <title>Exploration</title>
+    <link rel="icon" href="images/logo.png">
+    <style>
+        @font-face {
+            font-family: prompt;
+            src: url(fonts/Prompt-Light.ttf);
+        }
+
+        @font-face {
+            font-family: sansserifbook;
+            src: url(fonts/SansSerifBookFLF.otf);
+        }
+
+        * {
+            font-family: sansserifbook;
+            color: white;
+        }
+
+        main {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.95)), url("images/satellite-gcf2e82a22_1920.jpg");
+            height: 980px;
+            background-position: center;
+            background-size: fill;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 0px 0px 0px;
+            margin: 0px 50px;
+        }
+
+        header img {
+            margin: 0px 20px;
+        }
+
+        nav {
+            margin: 0px 0px;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 100;
+            transition: all 0.5s ease 0s;
+        }
+
+        li a:hover {
+            color: #af8650;
+        }
+
+        .box-1 {
+            margin: 200px 250px;
+            text-align: center;
+        }
+
+        .box-1 h1 {
+            font-size: 120px;
+            font-weight: lighter;
+        }
+
+        .box-1 p {
+            font-size: 16px;
+            font-weight: lighter;
+            opacity: 0.6;
+            font-family: prompt;
+            margin-top: 50px;
+        }
+
+        .box-1 button {
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 50px;
+            padding: 5px;
+            width: 120px;
+            margin: 50px 0px;
+        }
+
+        .box-1 button a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .box-1 button:hover {
+            opacity: 0.5;
+        }
+
+        .container-1 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.95)), url("images/2k_stars.jpg");
+        }
+
+        .container-1 h1 {
+            font-family: sansserifbook;
+            text-align: center;
+            color: #af8650;
+            font-weight: bold;
+            font-size: 35px;
+            margin: 50px;
+        }
+
+        .container-1 a {
+            opacity: 0.7;
+            color: lightgrey;
+            font-family: prompt;
+            font-size: 16px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .container-1 a:hover {
+            color: lightgrey;
+            opacity: 0.5;
+        }
+
+        .container-1 span {
+            display: flex;
+            align-items: center;
+        }
+
+        .container-1 hr {
+            border: 1px solid white;
+            opacity: 0.3;
+            width: 50%;
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .box p {
+            font-family: prompt;
+        }
+
+        .box h2 {
+            font-family: prompt;
+            margin-bottom: 40px;
+            color: #af8650;
+        }
+
+        .container-1 h1 {
+            text-align: center;
+        }
+
+        .ref {
+            margin-top: 0px;
+            padding: 100px;
+        }
+
+        .ref span {
+            display: flex;
+        }
+
+        .ref h1 {
+            font-family: prompt;
+            font-weight: bold;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .ref p {
+            font-family: prompt;
+            font-size: 18px;
+        }
+
+        .ref a {
+            margin-left: 10px;
+            color: #af8650;
+            font-size: 16px;
+        }
+
+        footer {
+            background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("images/earth-1365995_1920.jpg");
+            height: 350px;
+            margin: 0px;
+            background-position: center;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        footer p {
+            font-family: prompt;
+        }
+
+        footer a {
+            opacity: 0.7;
+            color: #af8650;
+            font-family: prompt;
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+
+        footer a:hover {
+            color: lightgrey;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <main title="Image by SpaceX-Imagery - Pixabay">
+        <header>
+            <a href="index.html"><img src="images/Saturn-Transparent-Images.png" width="100px"
+                    title="Image by pngarts"></a>
+            <nav>
+                <ul>
+                    <li style="background-color: lightgray; border-radius:
+                            50px"><a href="index.html" style="color: black;">Home</a></li>
+                    <li><a href="solar.html">Solar System</a></li>
+                    <li><a href="exploration.html">Exploration</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="box-1">
+            <h1>Space Exploration</h1>
+            <h1 style="color: transparent;
+                    -webkit-text-stroke-color: white;
+                    -webkit-text-stroke-width: 1px;">Timeline</h1>
+            <p>การสำรวจอวกาศ คือ การใช้วิทยาการด้านดาราศาสตร์และอวกาศเพื่อสำรวจและศึกษาห้วงอวกาศภายนอก<br>
+                การศึกษาอวกาศในทางกายภาพสามารถทำได้ทั้งโดยยานอวกาศที่ควบคุมโดยมนุษย์หรือโดยหุ่นยนต์<br>
+            </p>
+        </div>
+    </main>
+
+    <section class="container-1">
+        <span>
+            <hr>
+            <h1>1957</h1>
+            <hr>
+        </span>
+        <div class="box">
+            <div class="text-box">
+                <h2>3 พฤศจิกายน</h2>
+                <p>สหภาพโซเวียตได้ประดิษฐ์ดาวเทียมที่ชื่อว่า "สปุตนิด2"<br>
+                    พร้อมส่งสุนัขชื่อ "ไลก้า" ไปพร้อมกับดาวเทียมด้วย<br>
+                    ซึ่งเป็นสิ่งมีชีวิตชนิดแรกของโลกที่ขึ้นสู่อวกาศเป็นครั้งแรก</p>
+            </div>
+            <div style="display:flex; flex-direction:column;">
+                <img src="images/sputnik.jpg" width="500px" height="350px"
+                    style="filter: brightness(70%); object-fit:cover;">
+                <a href="https://akagreen.files.wordpress.com/2009/09/sputnik.jpg">แหล่งที่มา</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-1">
+        <span>
+            <hr>
+            <h1>1959</h1>
+            <hr>
+        </span>
+        <div class="box">
+            <div style="display:flex; flex-direction:column;">
+                <img src="images/luna1.jpg" width="500px" height="350px"
+                    style="filter: brightness(70%); object-fit:cover;">
+                <a href="https://img.europapress.es/fotoweb/fotonoticia_20190102121927_1200.jpg">แหล่งที่มา</a>
+            </div>
+            <div class="text-box">
+                <h2>2 มกราคม</h2>
+                <p>สหภาพโซเวียตได้ประดิษฐ์ดาวเทียม "ลูน่า1"<br>
+                    และได้ส่งมันขึ้นสู่อวกาศเพื่อให้มันเข้าพุ่งชนพื้นผิวดวงจันทร์<br>
+                    และนำข้อมูลของพื้นผิวดวงจันทร์กลับมายังโลกแต่ประสบความล้มเหลว<br>
+                    เนื่องจากดาวเทียมลูน่า1ได้หลุดไปโคจรรอบดวงอาทิตย์แทน</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-1">
+        <div class="box">
+            <div class="text-box">
+                <h2>14 กันยายน</h2>
+                <p>หลังจากลูน่า1 ประสบความล้มเหลวโซเวียตได้ประดิษฐ์ "ลูน่า2"<br>
+                    และได้ส่งมันขึ้นสู่อวกาศอีกครั้งโดยคราวนี้พุ่งชน <br>
+                    พื้นผิวของดวงจันทร์ได้สำเร็จและนำข้อมูลกลับมายังโลก <br>
+                    เป็นครั้งแรกของโลกที่ดาวเทียมไปถึงพื้นผิวของดาวดวงอื่นที่ไม่ใช่โลก</p>
+            </div>
+            <div style="display:flex; flex-direction:column;">
+                <img src="images/luna2.jpg" width="500px" height="350px"
+                    style="filter: brightness(70%); object-fit:cover;">
+                <a
+                    href="https://smedia2.intoday.in/indiatoday/images/stories/2016September/luna2moss_091416114808.jpg">แหล่งที่มา</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-1">
+        <span>
+            <hr>
+            <h1>1961</h1>
+            <hr>
+        </span>
+        <div class="box">
+            <div style="display:flex; flex-direction:column;">
+                <img src="images/vostock1.jpg" width="500px" height="350px"
+                    style="filter: brightness(70%); object-fit:cover;">
+                <a href="http://www.bisbos.com/images_spacecraft/vostok/vostok_orbit1_300.jpg">แหล่งที่มา</a>
+            </div>
+            <div class="text-box">
+                <h2>12 เมษายน</h2>
+                <p>สหภาพโซเวียตได้สร้างยาน "วอสต็อก1" ขึ้นไปโคจรรอบโลก<br>
+                    พร้อมกับได้ส่ง "ยูริ กาการิน" ขึ้นไปพร้อมกับยานวอสต็อก1<br>
+                    ยูริ กาการิน จึงเป็นนักบินอวกาศคนแรกของโลกที่ออกไปนอกโลก</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-1">
+        <span>
+            <hr>
+            <h1>1964</h1>
+            <hr>
+        </span>
+        <div class="box">
+            <div class="text-box">
+                <p>สหรัฐอเมริกาได้ส่งยานสำรวจอวกาศชื่อว่า "มารีเนอร์4"<br>
+                    ไปสำรวจดาวอังคารและถ่ายภาพพื้นผิวดาวอังคารกลับมายังโลก<br>
+                    ทำให้รู้ว่าดาวอังคารมีหลุมอุกกาบาตจำนวนมากเช่นเดียวกับดวงจันทร์<br>
+                    และพบปากปล่องภูเขาไฟจำนวนมาก</p>
+            </div>
+            <div style="display:flex; flex-direction:column;">
+                <img src="images/mariner4.jpg" wwidth="500px" height="350px"
+                    style="filter: brightness(70%); object-fit:cover;">
+                <a
+                    href="https://mars.nasa.gov/system/resources/detail_files/6805_Mariner-4-animation-spacecraft-engine-burn-full2.jpg">แหล่งที่มา</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-1">
+        <span>
+            <hr>
+            <h1>1969</h1>
+            <hr>
+        </span>
+        <div class="box">
+            <div style="display:flex; flex-direction:column;">
+                <img src="images/apollo11.jpg" width="500px" height="350px"
+                    style="filter: brightness(70%); object-fit:cover;">
+                <a
+                    href="https://media.cnn.com/api/v1/images/stellar/prod/190613145430-00-moon-landing.jpg?q=w_1850,h_1041,x_0,y_0,c_fill/w_1376">แหล่งที่มา</a>
+            </div>
+            <div class="text-box">
+                <h2>20 กรกฎาคม</h2>
+                <p>สหรัฐอเมริกาได้ส่งยาน "อพอลโล11"<br>
+                    พร้อมกับนักบินอวกาศคนแรกของโลกที่ได้เหยียบพื้นผิวของดวงจันทร์</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-1">
+        <span>
+            <hr>
+            <h1>1971</h1>
+            <hr>
+        </span>
+        <div class="box">
+            <div class="text-box">
+                <p>สหภาพโซเวียตได้ส่งยานสำรวจอวกาศ "มาร์3"<br>
+                    ลงจอดบนดาวอังคารเพื่อวิเคราะห์สภาพพื้นผิว <br><br>
+                    และสหรัฐอเมริกาได้ส่งยาน "มารีเนอร์9" ไปสำรวจดาวอังคารอีกครั้ง<br>
+                    พบ ภูเขาไฟ น้ำแข็งที่ขั้วดาว และตรวจพบดาวบริวารของดาวอังคาร2ดวง<br>
+                    ซึ่งได้รับการตั้งชื่อ ในเวลาต่อมาว่า"โฟบอส"และ"ดีมอส</p>
+            </div>
+            <div style="display:flex; flex-direction:column;">
+                <img src="http://robotpig.net/_images/posts/mro_1.jpg" width="500px" height="350px"
+                    style="filter: brightness(70%); object-fit:cover;">
+                <a href="http://robotpig.net/_images/posts/mro_1.jpg">แหล่งที่มา</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-1">
+        <span>
+            <hr>
+            <h1>1975</h1>
+            <hr>
+        </span>
+        <div class="box">
+            <div style="display:flex; flex-direction:column;">
+                <img src="https://mars.nasa.gov/system/content_pages/main_images/382_viking-lander-PIA09703.jpg"
+                    width="500px" height="350px" style="filter: brightness(70%); object-fit:cover;">
+                <a
+                    href="https://mars.nasa.gov/system/content_pages/main_images/382_viking-lander-PIA09703.jpg">แหล่งที่มา</a>
+            </div>
+            <div class="text-box">
+                <p>สหรัฐอเมริกาได้ส่งยาน "ไวกิ้ง1" ไปดาวอังคารพร้อมกับได้ส่งยาน "ไวกิ้ง2" ตามไป<br>
+                    เพื่อสำรวจพื้นผิวหุบเขา ร่องรอยของสิ่งมีชีวิตบนดาวอังคาร</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-1">
+        <span>
+            <hr>
+            <h1>1986</h1>
+            <hr>
+        </span>
+        <div class="box">
+            <div class="text-box">
+                <h2>กุมภาพันธ์</h2>
+                <p>สหภาพโซเวียตได้ส่งสถานีอวกาศที่ชื่อว่า "เมียร์" ออกไปโคจรรอบโลกได้สำเร็จ<br>
+                    มีการทดลองและสังเกตการณ์ทางวิทยาศาสตร์
+                    ซึ่งเป็นสถานีอวกาศสถานีแรกของโลก</p>
+            </div>
+            <div style="display:flex; flex-direction:column;">
+                <img src="https://i.natgeofe.com/n/f588fdf6-6508-478d-850c-8e686b52222e/01-mir-station-crash_3x2.jpg"
+                    width="500px" height="350px" style="filter: brightness(70%); object-fit:cover;">
+                <a
+                    href="https://i.natgeofe.com/n/f588fdf6-6508-478d-850c-8e686b52222e/01-mir-station-crash_3x2.jpg">แหล่งที่มา</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-1" style="padding-bottom: 200px;">
+        <span>
+            <hr>
+            <h1>1997</h1>
+            <hr>
+        </span>
+        <div class="box">
+            <div style="display:flex; flex-direction:column;">
+                <img src="https://i.stack.imgur.com/04rGm.jpg" width="500px" height="350px"
+                    style="filter: brightness(70%); object-fit:cover;">
+                <a href="https://i.stack.imgur.com/04rGm.jpg">แหล่งที่มา</a>
+            </div>
+            <div class="text-box">
+                <p>สหรัฐอเมริกาได้ปล่อยหุ่นยนต์หกล้อชื่อ "โซเจอร์เนอร์"<br>
+                    จากยานพาทไฟน์เดอร์ลงสู่พื้นผิวดาวอังคารข้อมูล ถ่ายภาพ <br>
+                    วิเคราะห์ส่วนประกอบของ หิน และ ดินบนดาวอังคารส่งกลับมายังโลก</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="ref">
+        <h1>แหล่งที่มา</h1>
+        <span>
+            <p>ภาพพื้นหลังทั้งหมด :</p>
+            <a href="https://pixabay.com/th/">pixabay.com</a>
+        </span>
+        <span>
+            <p>ข้อมูลทั้งหมด :</p>
+            <a href="https://th.wikipedia.org/wiki/การสำรวจอวกาศ">th.wikipedia.org/wiki/การสำรวจอวกาศ</a>
+        </span>
+    </section>
+
+    <footer>
+        <p style="color: grey;">Designed & Built by Pannisa Samerjai</p>
+    </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
