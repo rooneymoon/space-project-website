@@ -1,8 +1,8 @@
 # Space Website Project 🚀
-## Static Website and Non-responsive❗️
+## ⭕️ Static Website and Non-responsive
 Space website project built with HTML and pure CSS (Internal CSS).
 
-Simple website project to display some of my favorite things.
+Simple website project to display some of my favorite things.🪐
 
 ⭐️ Designed and Built by Pannisa :)
 
